@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    background: #507ea8;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    /* gap: 100px; */
+    
+
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  /* border-bottom: solid 1px black; */
+  box-shadow: 0px 9px 0px -1px rgba(66, 68, 90, 1);
+  background: #3e77ac;
+  margin-bottom: 50px;
+}
+
+.logo {
+  font-size: 20px;
+  color: #fff;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.switch-input {
+  width: 0px;
+  height: 0px;
+  opacity: 0px;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 34px;
+
+  background-color: #fa7e7e;
+  transition: 0.5s;
+}
+
+.switch-slider::before {
+  position: absolute;
+  cursor: pointer;
+  content: url(./gb_flag_great_britain_england_union_jack_english_icon_228674.svg);
+  left: 4px;
+  bottom: 4px;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background-color: #406af3;
+  transition: 0.5s;
+}
+
+.switch-input:checked + .switch-slider {
+  background-color: #f1fc8d;
+}
+
+.switch-input:checked + .switch-slider::before {
+  content: url(./russia_flag_icon_228690.svg);
+  transform: translateX(26px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav:hover {
+ cursor: pointer;
+}
+
+.topics-img {
+  width: 30px;
+  height: 30px;
+}
+
+.topic-head{
+  width: 150px;
+  background-color: tomato;
+  color: #444;
+  cursor: pointer;
+  padding: 10px 18px;
+  /* width: 100%; */
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  position: relative;
+}
+
+.topic-head:hover {
+  background-color: rgb(247, 80, 51);
+}
+
+.topic-block{
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: rgb(255, 196, 0);
+  background-color: tomato;
+}
+
+.hide {
+  height: 0;
+  transition: all 0.5s ease-out;
+}
+
+.active{
+  height: 200px;
+  transition: all 0.5s ease-out;
+}
+
+.topic-div {
+  padding: 10px 18px;
+}
+
+.topic-div:hover {
+  cursor: pointer;
+  background-color: rgb(247, 80, 51);
+}
+
+.eng-word, 
+.rus-word {
+  padding: 5px 5px;
+  outline-color: #9ff82a;
+}
+
+
+.bow, .wow {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #f8b02a;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  padding: 20px 5px 20px 7px;
+  transition: .2s;
+}
+
+.wow {
+  right: 120px;
+  bottom: 192px;
+}
+
+.bow {
+  right: 245px;
+  bottom: 175px;
+}
+
+
+.corgi {
+  position: absolute;
+  right: 100px;
+  bottom: 50px;
+  width: 150px;
+  height: 150px;
+}
+
+.corgi:hover {
+  cursor: pointer;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #507ea8;
+    gap: 30px;
+    height: 100%;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 80px;
+    background: #9ff82a;
+    font-size: 50px;
+    border-radius: 10px;
+    transition: 0.6s;
+    user-select: none;
+}
+
+.next:hover {
+    cursor: pointer;
+    background: #f0ff24;
+}
+
+.next:active {
+    transform: scale(0.95);
+}
+
+.card {
+    min-width: 350px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+    word-wrap: break-word;
+    padding: 15px;
+    font-size: 40px;
+}
+  .eng, .rus {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+    border-radius: 10px;
+
+  }
+  .eng {
+    background-color: #fff;
+    text-align: center;
+  }
+  .rus {
+    background-color: #f8b02a;
+    transform: rotateY(180deg);
+    font-size: 30px;
+    text-align: center;
+  }
+  .card:active .eng {transform: rotateY(180deg);}
+  .card:active .rus {transform: rotateY(360deg);}
+  /* или ховер */
+
+/* .rus2 {
+  word-break: break-all;
+  overflow-wrap: break-word;
+} */
+  .d {
+    display: none;
+  }
+
+  .a {
+    display: flex;
+    box-shadow: 7px 7px 0px 2px rgb(41, 43, 56);
+  }
+
+  @media (max-width: 360px) {
+    .header {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .add-words-block {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .add-words-btn,
+    .eng-word,
+    .rus-word {
+      width: 100%;
+    }
+
+    .add-words-btn{
+      padding: 10px;
+      background-color: #9ff82a;
+      border: none;
+    }
+
+    .card {
+      min-width: 320px;
+      height: 250px;
+    }
+
+    .next {
+      width: 320px;
+    }
+
+    .corgi,
+    .bow,
+    .wow,
+    .topic-head {
+      display: none;
+    }
+  }
